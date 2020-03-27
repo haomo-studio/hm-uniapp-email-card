@@ -14,7 +14,7 @@
 
 ## 技术支持
 
-* [uni-app插件市场](https://ext.dcloud.net.cn/plugin?id=1380)
+* [uni-app插件市场](https://ext.dcloud.net.cn/plugin?id=1513)
 
 * [npm包](https://www.npmjs.com/package/hm-uniapp-email-card)
 
@@ -37,7 +37,7 @@
 在script中引用：
 
 ```javascript
-import componentUpperCamelCase from '@/components/hm-email-card/index.vue'
+import HmEmailCard from '@/components/hm-email-card/index.vue'
 export default {
     components: { HmEmailCard }
 }
@@ -48,7 +48,7 @@ export default {
 ```html
 <template>
   <div class="test-component">
-    <hm-email-card></hm-email-card>
+    <hm-email-card :options="options"></hm-email-card>
   </div>
 </template>
 <script>
@@ -58,6 +58,20 @@ export default {
   components: { HmEmailCard },
   data() {
     return {
+      options: {
+         icon:
+            '/static/hm-email-card/images/img_25353_0_2.png',
+          num: '1',
+          newMessages: '条新消息',
+          summary:
+            '摄影是通过记录光线或其他电磁辐射，或通过图像传感器以电子方式，或通过化学方式，通过',
+          word: '…',
+          avator:
+            '/static/hm-email-card/images/img_25353_0_0.png',
+          alexander: '王二',
+          statimg:
+            '/static/hm-email-card/images/img_25353_0_1.png'
+        }
     };
   },
   methods: {
@@ -69,6 +83,7 @@ export default {
 </script>
 <style>
 </style>
+
 ```
 
 ## 属性说明
@@ -81,7 +96,12 @@ options对象各个属性说明如下：
 
 | 属性名        | 类型     | 默认值 | 说明                                                                       |
 |-----------   |---------|--------|----------------------------------------------------------------------------|
-| title        | String  | -      | 标题文字                                                                   |
+| icon        | String  | -      | 标题图片                                                                   |
+| num        | String  | -      | 未读数量                                                                   |
+| newMessages        | String  | -      | 标题文字                                                                   |
+| summary        | String  | -      | 内容                                                                   |
+| avator        | String  | -      | 邮件人                                                                   |
+| statimg        | String  | -      | 状态图片                                                                   |
 
 ## 事件说明
 
@@ -91,6 +111,6 @@ options对象各个属性说明如下：
 
 ## 更新日志
 
-### 0.0.1(2020-03-07)
+### 0.0.1(2020-03-27)
 
 * 完成第一个版本
